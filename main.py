@@ -67,6 +67,16 @@ async def ability(ctx):
     else:
         await ctx.send("You haven't created your own Pokémon yet.")
 
+# The '!info' command
+@bot.command()
+async def info(ctx):
+    author = ctx.author.name
+    if author in Pokemon.pokemons.keys():
+        pokemon = Pokemon.pokemons[author]
+        await ctx.send(await pokemon.info())
+    else:
+        await ctx.send("You haven't created your own Pokémon yet.")
+
 # The '!eat' command
 @bot.command()
 async def eat(ctx, *, food):
