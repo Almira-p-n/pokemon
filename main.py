@@ -86,6 +86,17 @@ async def eat(ctx, *, food):
         await ctx.send(f"{pokemon.name} ate {food}.")
     else:
         await ctx.send("You haven't created your own Pokémon yet.")
+    
+# The '!feed' command
+@bot.command()
+async def feed(ctx):
+    author = ctx.author.name
+    if author in Pokemon.pokemons.keys():
+        pokemon = Pokemon.pokemons[author]
+        result = await pokemon.feed()
+        await ctx.send(f"{pokemon.name} {result}")
+    else:
+        await ctx.send("You haven't created your own Pokémon yet.")
 
 # Running the bot
 bot.run(token)
