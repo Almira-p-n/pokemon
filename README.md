@@ -1,4 +1,5 @@
 Pokemon di discord
+
 Jadi, kalian bisa mendapatkan pokemon random dengan memasukkan perintah "!go".
 
 Untuk pembuatannya,
